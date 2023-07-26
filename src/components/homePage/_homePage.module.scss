@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.section {
+  // border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+  height: fit-content;
+}
+
+.navLink {
+  font-family: $font-family;
+  text-decoration: none;
+  color: $accent-color4;
+  transition: $transition;
+  border: 1px solid $accent-color3;
+  height: 44px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: $accent-color3;
+    color: white;
+  }
+}

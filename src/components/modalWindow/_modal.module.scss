@@ -1,0 +1,275 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.buttonClose {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  fill: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition;
+
+  &:hover {
+    fill: red;
+  }
+}
+
+.swiper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 220;
+  backdrop-filter: blur(30px);
+  transition: 1000ms;
+}
+
+.slide {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: $transition;
+  border-radius: $border-radius;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 300;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+
+  padding: 20px;
+  font-family: $font-family;
+  color: $font-color-dark;
+  background-color: $background-color;
+  // backdrop-filter: blur(30px);
+  width: 600px;
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: -25%;
+  border-radius: 50%;
+  box-shadow: $shadow;
+  width: 350px;
+  height: 350px;
+  transition: $transition;
+
+  z-index: 220;
+}
+
+.card__content {
+  width: 360px;
+  height: 268px;
+}
+
+.buttonsBox {
+  width: 360px;
+  height: 40px;
+}
+
+.buttonsBox__btn {
+  height: 100%;
+  padding: 10px;
+  color: white;
+  @include background-gradient--pink;
+  @include shadow--pink;
+  border: 0;
+  outline: none;
+  border-radius: $border-radius;
+  transition: $transition;
+  font-family: $font-family;
+  cursor: pointer;
+
+  &:hover {
+    @include shadow--pink-hover;
+  }
+}
+
+.spanBox {
+  height: fit-content;
+  width: 360px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.spanBox span {
+  background-color: $background-color;
+  border-radius: $border-radius;
+  padding: 7px;
+  color: $font-color-dark;
+  font-size: 10px;
+  margin-right: 8px;
+  box-shadow: 3px 3px 7px #5c7863, -2px -2px 3px #ffffff6b;
+}
+
+.h3 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  max-width: 95%;
+  line-height: 1.5;
+}
+
+.h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+  height: 18px;
+  width: fit-content;
+  border-bottom: 1px solid $font-color-dark;
+}
+
+.ingredients_list {
+  font-size: 11px;
+  overflow-y: auto;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 207px;
+}
+
+.ingredientsList__item {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.nutrients_list {
+  @extend .ingredients_list;
+
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  flex-wrap: wrap;
+  height: 85px;
+  font-size: 12px;
+}
+
+.nutrientsList__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  width: 47%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+}
+
+.labels_list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+
+.labelsList__item {
+  margin: 5px;
+  cursor: text;
+  -webkit-user-select: text;
+}
+
+.sourceLink {
+  font-size: 12px;
+  color: $font-color-light;
+  text-decoration: none;
+  transition: $transition;
+  margin-left: 15px;
+
+  &:hover {
+    color: $accent-color2;
+  }
+}
+
+.notLiked {
+  fill: rgba(255, 255, 255, 0.289);
+}
+
+.liked {
+  fill: red;
+}
+
+.checkbox {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $background-color;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+
+  &:hover {
+    fill: red !important;
+  }
+}
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  fill: rgb(102, 102, 102) !important;
+
+  &:hover {
+    fill: red !important;
+  }
+}
+
+.checkbox__input {
+  cursor: pointer;
+  position: relative;
+  z-index: 15;
+  opacity: 0;
+
+  &:checked ~ .label {
+    fill: red;
+  }
+}
+
+.checkbox:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: scale(0.9);
+  z-index: -1;
+}
+
+.checkbox:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px red;
+  filter: blur(3px);
+}
+
+.checkbox .label:hover {
+  box-shadow: 0 0 15px red;
+  text-shadow: 0 0 15px red;
+  fill: red !important;
+}

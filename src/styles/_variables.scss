@@ -1,0 +1,35 @@
+$background-color: rgba(255, 255, 255, 0.3);
+$background-color-green: #51655c62;
+$background-color-hover: rgba(255, 255, 255, 0.549);
+
+$font-color-dark: #242424;
+$font-color-light: rgb(255, 255, 255);
+
+$accent-color1: rgb(9, 108, 85);
+$accent-color2: greenyellow;
+$accent-color3: rgb(158, 173, 163);
+$accent-color4: #51655c;
+
+//Shadows
+
+$shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+// Transition
+
+$transition: all 200ms;
+
+// Radius
+
+$border-radius: 30px;
+
+$blur: blur(20px);
+
+// Fonts
+
+$font-family: 'Quicksand', sans-serif;
+
+@mixin button {
+  border: none;
+  border-radius: $border-radius;
+  outline: none;
+}

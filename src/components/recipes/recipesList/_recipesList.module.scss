@@ -1,0 +1,211 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+//todo invisible scrollbar
+// Making scrollbar invisible
+// .cardsList::-webkit-scrollbar {
+//   width: 0px;
+//   background: transparent;
+// }
+
+.cardsListBox {
+  height: 99%;
+  min-width: 800px;
+  width: 100%;
+}
+
+.cardsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+
+.card {
+  margin: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  min-width: 220px;
+  max-width: 80%;
+  height: 220px;
+  background-color: rgba(255, 255, 255, 0.366);
+  -webkit-backdrop-filter: $blur;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: $blur;
+  margin-top: 40px;
+  transition: $transition;
+  border-radius: $border-radius;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+}
+
+.thumb {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+.h3 {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  font-family: $font-family;
+  line-height: 1.5;
+}
+
+.calories {
+  position: absolute;
+  top: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $font-family;
+  font-size: 10px;
+  color: white;
+  padding: 8px;
+  border-radius: $border-radius;
+  margin-top: 5px;
+  @include shadow--pink;
+
+  @include background-gradient--pink;
+}
+
+.image {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: -30px;
+  width: 170px;
+  height: 170px;
+  box-shadow: -8px -8px 10px #ffffff3e, 8px 8px 10px #aeaec040,
+    inset -10px -10px 10px #aeaec025, inset 10px 10px 10px #fff;
+  border-radius: 50%;
+}
+
+.calendarBtn {
+  visibility: hidden;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -20px;
+  top: 70px;
+  background-color: $background-color;
+  backdrop-filter: 15px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  @include background-gradient--yellow;
+  fill: white;
+  transition: 300ms !important;
+  cursor: pointer;
+
+  // &:hover {
+  //   fill: $accent-color2;
+  //   box-shadow: 0 0 15px greenyellow;
+  //   text-shadow: 0 0 15px greenyellow;
+  // }
+}
+
+.checkbox {
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: -20px;
+  @include background-gradient--yellow;
+  backdrop-filter: 15px;
+  cursor: pointer;
+  fill: white;
+  transition: 300ms !important;
+  border-radius: 50%;
+
+  &:hover {
+    fill: red;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+// .checkbox:before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 50%;
+//   transition: 0.5s;
+//   transform: scale(0.9);
+//   z-index: -1;
+// }
+
+// .checkbox:hover:before {
+//   transform: scale(1.2);
+//   box-shadow: 0 0 15px red;
+//   filter: blur(3px);
+// }
+
+// .checkbox .label:hover {
+//   box-shadow: 0 0 15px red;
+//   text-shadow: 0 0 15px red;
+// }
+
+.liked {
+  fill: red;
+}
+
+.checkbox__input {
+  cursor: pointer;
+  position: relative;
+  z-index: 15;
+  opacity: 0;
+
+  &:checked ~ .label {
+    fill: red;
+  }
+}
+
+.card:hover {
+  .calendarBtn {
+    visibility: visible;
+  }
+
+  .checkbox {
+    visibility: visible;
+  }
+}

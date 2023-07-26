@@ -1,0 +1,165 @@
+@import '../../../styles/variables';
+
+.swiper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+  z-index: 200;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 170px 170px;
+  grid-template-rows: 2;
+  width: 370px;
+  height: 370px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: $background-color;
+  backdrop-filter: blur(15px);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+}
+
+.card__image {
+  width: 170px;
+  height: 170px;
+  margin-right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 5px;
+}
+
+.card__content {
+  width: 350px;
+  margin-top: 8px;
+}
+
+.content__h4 {
+  color: $font-color-dark;
+  font-size: 12px;
+  font-family: $font-family;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $font-color-dark;
+}
+
+.ingredientsList {
+  color: $font-color-dark;
+  font-family: $font-family;
+  font-size: 10px;
+  overflow-y: auto;
+  height: 105px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.ingredientsList__item {
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.card__link {
+  position: fixed;
+  bottom: 10px;
+  color: $font-color-dark;
+  fill: $font-color-dark;
+  font-size: 12px;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $accent-color1;
+  }
+}
+
+// Additional information <div>
+
+.additionalInfo {
+  width: 100%;
+  height: 170px;
+  margin-left: 10px;
+}
+
+.nutrients_list {
+  width: 100%;
+  color: $font-color-dark;
+  font-size: 10px;
+  font-family: $font-family;
+}
+
+.nutrientsList__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  line-height: 1.5;
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.267);
+}
+
+.spanBox {
+  height: 22px;
+  width: 100%;
+}
+
+.spanBox span {
+  background-color: $accent-color1;
+  border-radius: $border-radius;
+  padding: 5px;
+  color: white;
+  font-size: 10px;
+  margin-right: 8px;
+}
+.buttonsBox {
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+}
+
+.button {
+  @include button;
+  background-color: transparent;
+  fill: $font-color-dark;
+  transition: $transition;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    fill: $accent-color1;
+  }
+}
+
+.button_add {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  padding-right: 14px;
+  background-color: $accent-color3;
+  fill: $font-color-dark;
+  color: $font-color-dark;
+  outline: none;
+  border: none;
+  border-radius: $border-radius;
+  transition: $transition;
+
+  &:hover {
+    background-color: $accent-color1;
+  }
+}

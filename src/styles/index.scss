@@ -1,0 +1,22 @@
+@import './variables';
+
+@import '../components/recipes/recipesList/recipesList.module';
+@import '../components/recipes/recipesPage/recipesPage.module';
+@import '../components/recipes/modalWindow/modal.module';
+
+@import '../components/sidebar/sideBar.module';
+
+@import '../components/wishlist/wishlist.module';
+
+@import '../components/shoppingList/shoppingList.module';
+
+@import '../components/planner/plannerPage/plannerPage.module';
+@import '../components/planner/plannerList/plannerList.module';
+@import '../components/planner/recipeCard/recipeCard.module';
+
+@import '../components/plannerForm/plannerForm.module';
+@import '../components/recipesForm/chips.module';
+@import '../components/recipesForm/dropdownMenu.module';
+@import '../components/recipesForm/recipesForm.module';
+
+@import '../components/svgGenerator/svg.module';

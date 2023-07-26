@@ -1,0 +1,104 @@
+// GRADIENT
+// pink
+@mixin text-gradient--pink {
+  background: #ff9b31;
+  background: -webkit-linear-gradient(to right, #ff9b31 0%, #f04579 100%);
+  background: -moz-linear-gradient(to right, #ff9b31 0%, #f04579 100%);
+  background: linear-gradient(to right, #ff9b31 0%, #f04579 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin background-gradient--pink {
+  background: rgb(255, 155, 49);
+  background: -moz-linear-gradient(
+    137deg,
+    rgba(255, 155, 49, 1) 0%,
+    rgba(240, 69, 121, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    137deg,
+    rgba(255, 155, 49, 1) 0%,
+    rgba(240, 69, 121, 1) 100%
+  );
+  background: linear-gradient(
+    137deg,
+    rgba(255, 155, 49, 1) 0%,
+    rgba(240, 69, 121, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff9b31",endColorstr="#f04579",GradientType=1);
+}
+
+@mixin shadow--pink {
+  -webkit-box-shadow: 4px 4px 14px #e9631f, -2px -2px 10px #f0457887;
+  -moz-box-shadow: 4px 4px 14px #e9631f, -2px -2px 10px #f0457887;
+  box-shadow: 4px 4px 14px #e9631f, -2px -2px 10px #f0457887;
+}
+
+@mixin shadow--pink-hover {
+  -webkit-box-shadow: 7px 7px 17px #e9631f, -5px -5px 13px #f0457887;
+  -moz-box-shadow: 7px 7px 17px #e9631f, -5px -5px 13px #f0457887;
+  box-shadow: 7px 7px 17px #e9631f, -5px -5px 13px #f0457887;
+}
+
+//green
+
+@mixin background-gradient--green {
+  background: rgb(185, 222, 164);
+  background: -moz-linear-gradient(
+    137deg,
+    rgba(185, 222, 164, 1) 0%,
+    rgba(112, 211, 195, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    137deg,
+    rgba(185, 222, 164, 1) 0%,
+    rgba(112, 211, 195, 1) 100%
+  );
+  background: linear-gradient(
+    137deg,
+    rgba(185, 222, 164, 1) 0%,
+    rgba(112, 211, 195, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b9dea4",endColorstr="#70d3c3",GradientType=1);
+}
+
+@mixin text-gradient--green {
+  background: #458177;
+  background: -webkit-linear-gradient(to right, #458177 0%, #9cc286 100%);
+  background: -moz-linear-gradient(to right, #458177 0%, #9cc286 100%);
+  background: linear-gradient(to right, #458177 0%, #9cc286 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin shadow--green {
+  -webkit-box-shadow: 3px 5px 10px rgba(82, 156, 144, 0.595),
+    0px -3px 8px rgba(134, 161, 119, 0.588);
+  -moz-box-shadow: 3px 5px 10px rgba(82, 156, 144, 0.595),
+    0px -3px 8px rgba(134, 161, 119, 0.588);
+  box-shadow: 3px 3px 10px rgba(82, 156, 144, 0.595),
+    0px -3px 8px rgba(134, 161, 119, 0.588);
+}
+
+//yellow
+
+@mixin background-gradient--yellow {
+  background: rgb(250, 255, 164);
+  background: -moz-linear-gradient(
+    137deg,
+    rgba(250, 255, 164, 1) 0%,
+    rgba(240, 69, 121, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    137deg,
+    rgba(250, 255, 164, 1) 0%,
+    rgba(240, 69, 121, 1) 100%
+  );
+  background: linear-gradient(
+    137deg,
+    rgba(250, 255, 164, 1) 0%,
+    rgba(240, 69, 121, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#faffa4",endColorstr="#f04579",GradientType=1);
+}

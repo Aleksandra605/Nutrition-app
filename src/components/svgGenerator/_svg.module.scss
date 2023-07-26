@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.icon {
+  display: block;
+  stroke-width: 0;
+  stroke: currentColor;
+  margin-left: 5px;
+}
+
+.icon__show {
+  fill: inherit;
+  width: 30px;
+  height: 30px;
+}
+
+.icon__search {
+  display: block;
+  stroke-width: 0;
+  position: absolute;
+  fill: inherit;
+  left: 20px;
+}
+
+.icon__search2 {
+  fill: inherit;
+  width: 12px;
+  height: 12px;
+}
+
+.icon__like {
+  fill: inherit !important;
+  transition: $transition;
+}
+
+.icon__calendar {
+  fill: inherit;
+  transition: $transition;
+}
+
+.icon__close {
+  fill: inherit;
+  width: 15px;
+  height: 15px;
+}
+
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+}
