@@ -194,14 +194,6 @@
   }
 }
 
-.notLiked {
-  fill: rgba(255, 255, 255, 0.289);
-}
-
-.liked {
-  fill: red;
-}
-
 .checkbox {
   position: absolute;
   display: flex;
@@ -231,11 +223,15 @@
   position: absolute;
   z-index: 10;
   cursor: pointer;
-  fill: rgb(102, 102, 102) !important;
+  fill: rgb(102, 102, 102);
 
   &:hover {
-    fill: red !important;
+    fill: red;
   }
+}
+
+.liked {
+  fill: red;
 }
 
 .checkbox__input {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 
 import { Navigation, Pagination, Keyboard } from 'swiper';
@@ -15,6 +15,7 @@ import {
   addToWishlist,
   deleteFromWishList,
 } from '../../redux/wishList/wishList-operations';
+import { getRecipesList } from '../../redux/recipes/recipes-selectors';
 
 import SvgGenerator from '../svgGenerator/SvgGenerator';
 
@@ -26,6 +27,10 @@ function Modal({
   deleteFromWishlist,
 }) {
   const [nutrientsToggle, setNutrientsToggle] = useState(false);
+
+  useEffect(() => {
+    console.log('recipes list has changed');
+  }, [recipes]);
 
   return (
     <Swiper
@@ -71,19 +76,17 @@ function Modal({
                     type="checkbox"
                     id="liked"
                     name="liked"
-                    className={`${s.checkbox__input} ${
-                      el.liked ? s.liked : null
-                    }`}
+                    className={`${s.checkbox__input} `}
                     onClick={() => {
                       if (el.liked) {
-                        return deleteFromWishlist(el.recipeId);
+                        return deleteFromWishlist({ uri: el.uri });
                       }
-                      return addRecipeToWishList(el);
+                      return addRecipeToWishList({ uri: el.uri });
                     }}
                   ></input>
                   <label
                     htmlFor="liked"
-                    className={`${s.label}  ${el.liked ? s.liked : s.notLiked}`}
+                    className={`${s.label}  ${el.liked ? s.liked : null}`}
                   >
                     <SvgGenerator name="icon__like" />
                   </label>
@@ -154,6 +157,10 @@ function Modal({
   );
 }
 
+const mapStateToProps = (state) => ({
+  recipes: getRecipesList(state),
+});
+
 const mapDispatchToProps = (dispatch) => ({
   addRecipeToWishList: (data) => {
     return dispatch(addToWishlist(data));
@@ -163,4 +170,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(null, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

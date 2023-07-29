@@ -42,6 +42,10 @@ function RecipesList({
     fetchingNextPage();
   }, [fetching]);
 
+  // useEffect(() => {
+  //   console.log('recipes list has changed');
+  // }, [recipesList]);
+
   useEffect(() => {
     const listNode = cardsListRef.current;
 
@@ -90,9 +94,7 @@ function RecipesList({
       {plannerForm ? (
         <PlannerForm onClose={onClose} index={currentIndex} />
       ) : null}
-      {modalOpen ? (
-        <Modal index={currentIndex} onClose={onClose} recipes={recipesList} />
-      ) : null}
+      {modalOpen ? <Modal index={currentIndex} onClose={onClose} /> : null}
       <div className={s.cardsListBox} hidden={modalOpen}>
         <ul className={s.cardsList} ref={cardsListRef}>
           {recipesList.map((el, index) => (

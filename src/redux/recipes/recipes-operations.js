@@ -12,7 +12,26 @@ var qs = require('qs');
 
 axios.defaults.baseURL = 'https://nutritionapp-1-t7373772.deta.app/api';
 
-const fetchRecipe = (data) => (dispatch) => {
+const token = {
+  set(token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset() {
+    axios.defaults.headers.common.Authorization = '';
+  },
+};
+
+const fetchRecipe = (data) => (dispatch, getState) => {
+  const {
+    auth: { token: persistedToken },
+  } = getState();
+
+  if (!persistedToken) {
+    return;
+  }
+
+  token.set(persistedToken);
+
   dispatch(fetchRecipeRequest());
 
   const query = qs.stringify(data);
@@ -26,7 +45,17 @@ const fetchRecipe = (data) => (dispatch) => {
   // .catch((error) => dispatch(fetchRecipeError(error)));
 };
 
-const fetchNextPage = () => (dispatch) => {
+const fetchNextPage = () => (dispatch, getState) => {
+  const {
+    auth: { token: persistedToken },
+  } = getState();
+
+  if (!persistedToken) {
+    return;
+  }
+
+  token.set(persistedToken);
+
   dispatch(fetchNextPageRequest());
 
   const query = qs.stringify({ next: 'nextPage' });

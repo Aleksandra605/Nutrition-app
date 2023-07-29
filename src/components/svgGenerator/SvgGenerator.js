@@ -20,13 +20,13 @@ export default function SvgGenerator({ name }) {
           <g id="SVGRepo_iconCarrier">
             {' '}
             <title>filter-horizontal</title>{' '}
-            <g id="Layer_2" dataName="Layer 2">
+            <g id="Layer_2" dataname="Layer 2">
               {' '}
-              <g id="invisible_box" dataName="invisible box">
+              <g id="invisible_box" dataname="invisible box">
                 {' '}
                 <rect width="48" height="48" fill="none"></rect>{' '}
               </g>{' '}
-              <g id="icons_Q2" dataName="icons Q2">
+              <g id="icons_Q2" dataname="icons Q2">
                 {' '}
                 <path d="M41.8,8H21.7A6.2,6.2,0,0,0,16,4a6,6,0,0,0-5.6,4H6.2A2.1,2.1,0,0,0,4,10a2.1,2.1,0,0,0,2.2,2h4.2A6,6,0,0,0,16,16a6.2,6.2,0,0,0,5.7-4H41.8A2.1,2.1,0,0,0,44,10,2.1,2.1,0,0,0,41.8,8ZM16,12a2,2,0,1,1,2-2A2,2,0,0,1,16,12Z"></path>{' '}
                 <path d="M41.8,22H37.7A6.2,6.2,0,0,0,32,18a6,6,0,0,0-5.6,4H6.2a2,2,0,1,0,0,4H26.4A6,6,0,0,0,32,30a6.2,6.2,0,0,0,5.7-4h4.1a2,2,0,1,0,0-4ZM32,26a2,2,0,1,1,2-2A2,2,0,0,1,32,26Z"></path>{' '}
