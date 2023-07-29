@@ -28,10 +28,6 @@ function Modal({
 }) {
   const [nutrientsToggle, setNutrientsToggle] = useState(false);
 
-  useEffect(() => {
-    console.log('recipes list has changed');
-  }, [recipes]);
-
   return (
     <Swiper
       pagination={{
@@ -77,7 +73,8 @@ function Modal({
                     id="liked"
                     name="liked"
                     className={`${s.checkbox__input} `}
-                    onClick={() => {
+                    onClick={(event) => {
+                      console.log('event>>>', event);
                       if (el.liked) {
                         return deleteFromWishlist({ uri: el.uri });
                       }

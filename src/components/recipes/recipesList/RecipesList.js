@@ -120,7 +120,8 @@ function RecipesList({
                   id="liked"
                   name="liked"
                   className={s.checkbox__input}
-                  onClick={() => {
+                  onClick={(event) => {
+                    console.log('event>>>', event);
                     if (el.liked) {
                       return deleteFromWishlist({ uri: el.uri });
                     }
