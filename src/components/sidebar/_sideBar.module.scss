@@ -25,30 +25,30 @@
   }
 
   .sidebar__menu {
-    background-color: $background-color-green;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background-color: transparent;
+    backdrop-filter: $blur;
+    -webkit-backdrop-filter: blur(20px);
     transition: width 0.5s;
     width: 100%;
     height: 100%;
 
     .navLink {
       font-size: 14px;
+      font-family: $font-family;
       white-space: nowrap;
       width: 60px;
       height: 80px;
       text-decoration: none;
       color: $font-color-light;
       fill: $font-color-light;
-      font-weight: 500;
+      font-weight: 400;
       transition: $transition;
       margin: 0 !important;
       display: flex;
       align-items: center;
 
       &:hover {
-        color: $accent-color4;
-        fill: $accent-color4;
+        background-color: $background-color;
       }
     }
 
@@ -82,10 +82,10 @@
     border: none;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     transition: $transition;
     cursor: pointer;
-    fill: $accent-color1;
+    fill: $font-color-light;
 
     &:hover {
       color: red !important;

@@ -33,10 +33,10 @@ function App({ token, loading }) {
 
   useEffect(() => {
     if (token !== null) {
-      return navigate('/recipesearch', { replace: true });
+      return navigate('/recipesearch');
     }
 
-    return navigate('/', { replace: true });
+    return navigate('/login');
   }, [token]);
 
   return (

@@ -52,7 +52,16 @@ const logIn = (credentials) => async (dispatch) => {
   }
 };
 
-const logOut = () => async (dispatch) => {
+const logOut = () => async (dispatch, getState) => {
+  const {
+    auth: { token: persistedToken },
+  } = getState();
+
+  if (!persistedToken) {
+    return;
+  }
+
+  token.set(persistedToken);
   dispatch(logoutRequest());
 
   try {

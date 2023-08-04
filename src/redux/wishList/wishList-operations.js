@@ -4,23 +4,13 @@ import {
   addToWishlistSuccess,
   fetchWishlistRequest,
   fetchWishlistSuccess,
-  // addToWishlistError,
+  addToWishlistError,
   removeFromWishlistRequest,
   removeFromWishlistSuccess,
 } from './wishList-actions';
 
+import toastifyOptions from '../../helpers/toastifyOptions';
 import Toastify from 'toastify-js';
-import 'toastify-js/src/toastify.css';
-
-const toastifyOptions = {
-  text: 'The recipe is already on the wishlist',
-  className: 'error',
-  stopOnFocus: true,
-  autoClose: 5000,
-  style: {
-    background: 'rgba(154, 22, 46, 0.725)',
-  },
-};
 
 axios.defaults.baseURL = 'https://nutritionapp-1-t7373772.deta.app/api';
 
@@ -53,8 +43,14 @@ const addToWishlist = (data) => (dispatch, getState) => {
     .post('/wishlist/addtowishlist', data)
     .then(({ data }) => {
       dispatch(addToWishlistSuccess(data));
+      Toastify(
+        toastifyOptions('info', 'Recipe added to wishlist.')
+      ).showToast();
     })
-    .catch((error) => Toastify(toastifyOptions).showToast());
+    .catch((error) => {
+      dispatch(addToWishlistError());
+      Toastify(toastifyOptions('error', error.message)).showToast();
+    });
 };
 
 //.....................................................................
@@ -75,8 +71,15 @@ const deleteFromWishList =
     dispatch(removeFromWishlistRequest());
     axios
       .delete(`/wishlist/removeItem`, { data: { uri: uri } })
-      .then(({ data }) => dispatch(removeFromWishlistSuccess(data)))
-      .catch((error) => console.log(error));
+      .then(({ data }) => {
+        dispatch(removeFromWishlistSuccess(data));
+        Toastify(
+          toastifyOptions('info', 'Recipe removed from wishlist.')
+        ).showToast();
+      })
+      .catch((error) =>
+        Toastify(toastifyOptions('error', error.message)).showToast()
+      );
   };
 
 //.....................................................................

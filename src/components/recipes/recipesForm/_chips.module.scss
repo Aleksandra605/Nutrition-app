@@ -21,8 +21,9 @@
   border-radius: $border-radius;
   border: none;
   outline: none;
-  @include background-gradient--green;
+  // @include background-gradient--red;
   // @include shadow--green;
+  background-color: $accent-color3;
   color: white;
   transition-timing-function: linear;
   transition: 300ms;

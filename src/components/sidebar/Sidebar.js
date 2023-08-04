@@ -20,8 +20,9 @@ function Sidebar({ logout, token }) {
               className={s.navLink}
               to="/recipesearch"
               style={({ isActive }) => ({
-                color: isActive ? '#51655c' : null,
-                fill: isActive ? '#51655c' : null,
+                backgroundColor: isActive ? 'rgba(255, 255, 255, 0.3)' : null,
+                // color: isActive ? '#c5fc22' : null,
+                // fill: isActive ? '#c5fc22' : null,
               })}
             >
               <SvgGenerator name="sidebar__search-icon" />
@@ -33,8 +34,9 @@ function Sidebar({ logout, token }) {
               className={s.navLink}
               to="/wishlist"
               style={({ isActive }) => ({
-                color: isActive ? '#51655c' : null,
-                fill: isActive ? '#51655c' : null,
+                backgroundColor: isActive ? 'rgba(255, 255, 255, 0.3)' : null,
+                // color: isActive ? '#c5fc22' : null,
+                // fill: isActive ? '#c5fc22' : null,
               })}
             >
               <SvgGenerator name="sidebar__wishlist-icon" />
@@ -46,8 +48,9 @@ function Sidebar({ logout, token }) {
               className={s.navLink}
               to="/planner"
               style={({ isActive }) => ({
-                color: isActive ? '#51655c' : null,
-                fill: isActive ? '#51655c' : null,
+                backgroundColor: isActive ? 'rgba(255, 255, 255, 0.3)' : null,
+                // color: isActive ? '#c5fc22' : null,
+                // fill: isActive ? '#c5fc22' : null,
               })}
             >
               <SvgGenerator name="sidebar__planner-icon" />
@@ -59,8 +62,9 @@ function Sidebar({ logout, token }) {
               className={s.navLink}
               to="/shoppingList"
               style={({ isActive }) => ({
-                color: isActive ? '#51655c' : null,
-                fill: isActive ? '#51655c' : null,
+                backgroundColor: isActive ? 'rgba(255, 255, 255, 0.3)' : null,
+                // color: isActive ? '#c5fc22' : null,
+                // fill: isActive ? '#c5fc22' : null,
               })}
             >
               <SvgGenerator name="sidebar__basket-icon" />
@@ -75,8 +79,9 @@ function Sidebar({ logout, token }) {
               className={s.navLink}
               to="/recipesearch"
               style={({ isActive }) => ({
-                color: isActive ? '#51655c' : null,
-                fill: isActive ? '#51655c' : null,
+                backgroundColor: isActive ? 'rgba(255, 255, 255, 0.3)' : null,
+                // color: isActive ? '#c5fc22' : null,
+                // fill: isActive ? '#c5fc22' : null,
               })}
             >
               <SvgGenerator name="sidebar__search-icon" />

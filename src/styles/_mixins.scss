@@ -102,3 +102,23 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#faffa4",endColorstr="#f04579",GradientType=1);
 }
+
+@mixin background-gradient--red {
+  background: rgb(115, 9, 23);
+  background: -moz-linear-gradient(
+    148deg,
+    rgba(115, 9, 23, 1) 22%,
+    rgba(255, 61, 91, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    148deg,
+    rgba(115, 9, 23, 1) 22%,
+    rgba(255, 61, 91, 1) 100%
+  );
+  background: linear-gradient(
+    148deg,
+    rgba(115, 9, 23, 1) 22%,
+    rgba(255, 61, 91, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#730917",endColorstr="#ff3d5b",GradientType=1);
+}
